@@ -38,7 +38,9 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col w-full overflow-x-hidden font-sans text-slate-900 bg-offwhite snap-y snap-mandatory">
+    // UPDATED: 'snap-proximity' is better for mobile touch scrolling on variable height sections.
+    // 'lg:snap-mandatory' keeps the premium app-like feel on desktop.
+    <div className="min-h-screen flex flex-col w-full overflow-x-hidden font-sans text-slate-900 bg-offwhite snap-y snap-proximity lg:snap-mandatory">
       <Navbar />
       <main className="flex-grow">
         <div className="snap-start"><Hero /></div>
