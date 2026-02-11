@@ -13,7 +13,12 @@ export const SavingsSimulator: React.FC = () => {
 
   return (
     <section className="py-20 bg-brand-900 text-white overflow-hidden relative">
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-10">
+      
+      {/* Tech Grid Background - The "Brain" Effect */}
+      <div className="absolute inset-0 bg-tech-grid pointer-events-none opacity-20 z-0"></div>
+
+      {/* Decorative Orbs */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-10 pointer-events-none">
           <div className="absolute w-96 h-96 bg-brand-400 rounded-full blur-3xl -top-20 -left-20"></div>
           <div className="absolute w-96 h-96 bg-accent-400 rounded-full blur-3xl bottom-0 right-0"></div>
       </div>
@@ -21,7 +26,7 @@ export const SavingsSimulator: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
-          <div>
+          <div className="reveal">
             <span className="text-accent-400 font-bold uppercase tracking-wider text-sm mb-2 block">Calculadora de Economia</span>
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
               Descubra quanto dinheiro você está perdendo com a contabilidade tradicional.
@@ -34,7 +39,7 @@ export const SavingsSimulator: React.FC = () => {
             </Button>
           </div>
 
-          <div className="bg-white rounded-2xl p-8 shadow-2xl text-slate-900">
+          <div className="reveal delay-200 bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-2xl text-slate-900 border border-white/20">
             <h3 className="text-xl font-bold text-slate-900 mb-8 text-center">Simule sua economia</h3>
             
             <div className="mb-8">

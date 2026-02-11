@@ -81,7 +81,7 @@
       .reveal.active {
         opacity: 1;
         transform: translateY(0);
-        filter: blur(0);
+        filter: blur(0) brightness(1.1); /* Brilho sutil "digital" ao entrar */
       }
 
       /* Scale Reveal Effect (New) */
@@ -96,7 +96,7 @@
         transform: scale(1) translateY(0);
       }
 
-      /* Tech Divider Glow Effect */
+      /* Tech Divider Glow Effect (Legacy class, kept for compatibility if needed) */
       .divider-glow {
         height: 1px;
         width: 100%;
@@ -122,6 +122,35 @@
       @keyframes scan {
         0% { left: -100%; }
         100% { left: 100%; }
+      }
+
+      /* --- NOVOS EFEITOS TECH --- */
+      
+      /* Fundo de grade tecnológica */
+      .bg-tech-grid {
+        background-size: 40px 40px;
+        background-image: 
+          linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+        -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 80%);
+      }
+
+      /* Linha de luz que "escaneia" o divisor */
+      .tech-scan-line {
+        height: 1px;
+        width: 100%;
+        background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 30;
+        animation: scan-line 3s infinite linear;
+      }
+
+      @keyframes scan-line {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
       }
 
       /* Stagger delays */
