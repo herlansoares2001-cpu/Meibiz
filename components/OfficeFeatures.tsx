@@ -57,7 +57,12 @@ export const OfficeFeatures: React.FC = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {features.map((feature, idx) => (
-                <div key={idx} className="reveal bg-slate-50 border border-slate-100 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 group cursor-default">
+                <div 
+                  key={idx} 
+                  // Applied reveal-scale and dynamic delay based on index
+                  className="reveal-scale bg-slate-50 border border-slate-100 p-6 rounded-2xl hover:shadow-lg transition-all duration-300 group cursor-default"
+                  style={{ transitionDelay: `${idx * 100}ms` }}
+                >
                     <div className={`${feature.color} w-12 h-12 rounded-xl flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-transform duration-300`}>
                         {feature.icon}
                     </div>
@@ -67,7 +72,7 @@ export const OfficeFeatures: React.FC = () => {
             ))}
         </div>
 
-        <div className="text-center reveal delay-200">
+        <div className="text-center reveal delay-500">
             <Button variant="outline" className="border-brand-200 text-brand-600 hover:bg-brand-50">
                 Ver todos os planos <ArrowRight className="ml-2 w-4 h-4" />
             </Button>

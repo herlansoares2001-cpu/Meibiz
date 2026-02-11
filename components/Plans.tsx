@@ -59,8 +59,15 @@ export const Plans: React.FC = () => {
   const currentPlans = plansData[activeTab];
 
   return (
-    <section id="planos" className="py-24 bg-offwhite">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="planos" className="relative py-24 bg-offwhite">
+      {/* Wave Divider to break the line from previous white section */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-[0]">
+        <svg className="relative block w-full h-[60px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#FFFFFF"></path>
+        </svg>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12 reveal">
           <h2 className="text-3xl lg:text-4xl font-medium text-slate-900 mb-6">Planos e Preços</h2>
           
@@ -88,12 +95,13 @@ export const Plans: React.FC = () => {
           {currentPlans.map((plan, index) => (
             <div 
               key={plan.name}
-              className={`reveal relative rounded-[2rem] p-8 flex flex-col transition-all duration-300 ${
+              // Added reveal-scale for staggered zoom entry
+              className={`reveal-scale relative rounded-[2rem] p-8 flex flex-col transition-all duration-300 ${
                 plan.highlight 
                   ? 'bg-brand-950 text-white shadow-2xl scale-105 z-10 border border-brand-800' 
                   : 'bg-white text-slate-900 border border-slate-200 shadow-sm hover:shadow-lg'
               }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
+              style={{ transitionDelay: `${index * 150}ms` }}
             >
               {plan.highlight && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-accent-500 text-white px-4 py-1 rounded-full text-xs font-medium uppercase tracking-wide flex items-center gap-1 shadow-lg">

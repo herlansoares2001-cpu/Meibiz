@@ -73,8 +73,9 @@ export const Hero: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full">
         <div 
           className="max-w-3xl"
-          // Subtle parallax on text too for depth (moves slightly faster than bg)
-          style={{ transform: `translateY(${scrollY * 0.05}px)` }}
+          // Depth Effect: Text moves slightly opposite to scroll direction (negative value) or slower positive
+          // Setting it to -0.1 makes it feel like it's closer to the camera/glass than the background
+          style={{ transform: `translateY(${scrollY * -0.1}px)` }}
         >
           
           {/* Badge */}

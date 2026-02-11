@@ -84,7 +84,8 @@ export const Navbar: React.FC = () => {
 
   return (
     <header 
-      className={`fixed z-50 transition-all duration-500 ease-in-out ${
+      style={{ transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)' }}
+      className={`fixed z-50 ${
         isScrolled 
           ? 'top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl bg-white/70 backdrop-blur-xl border border-white/40 shadow-2xl rounded-full py-3 px-6' 
           : 'top-0 left-0 w-full bg-transparent py-6 px-4 sm:px-6 lg:px-8 border-b border-transparent'
