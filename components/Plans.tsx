@@ -98,17 +98,18 @@ export const Plans: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {/* Key on grid container forces re-render of children when tab changes, triggering animation */}
+        <div key={activeTab} className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {currentPlans.map((plan, index) => (
             <div 
               key={plan.name}
-              // Added reveal-scale for staggered zoom entry
-              className={`reveal-scale relative rounded-[2rem] p-8 flex flex-col transition-all duration-300 ${
+              // Changed from reveal-scale to animate-enter to fix the visibility bug on tab switch
+              className={`animate-enter relative rounded-[2rem] p-8 flex flex-col transition-all duration-300 group hover:-translate-y-2 ${
                 plan.highlight 
                   ? 'bg-brand-950 text-white shadow-2xl scale-105 z-10 border border-brand-800' 
                   : 'bg-white text-slate-900 border border-slate-200 shadow-sm hover:shadow-lg'
               }`}
-              style={{ transitionDelay: `${index * 150}ms` }}
+              style={{ animationDelay: `${index * 150}ms`, opacity: 0 }} // Start opacity 0 to let animation handle it
             >
               {plan.highlight && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-accent-500 text-white px-4 py-1 rounded-full text-xs font-medium uppercase tracking-wide flex items-center gap-1 shadow-lg">

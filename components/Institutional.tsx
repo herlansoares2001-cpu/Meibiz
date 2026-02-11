@@ -1,42 +1,136 @@
 import React from 'react';
+import { Users, MapPin, Award, TrendingUp, ShieldCheck } from 'lucide-react';
 
 export const Institutional: React.FC = () => {
-  return (
-    <section className="py-20 bg-brand-950 text-white relative">
-      {/* 1. Glow Scan Line - Tech Effect */}
-      <div className="divider-glow"></div>
+  const stats = [
+    {
+      value: "50k+",
+      label: "Empreendedores",
+      sub: "Confiam na MeiBiz",
+      icon: <Users className="w-6 h-6 text-brand-400" />,
+      delay: "100"
+    },
+    {
+      value: "100+",
+      label: "Especialistas",
+      sub: "Contadores Reais",
+      icon: <ShieldCheck className="w-6 h-6 text-emerald-400" />,
+      delay: "200"
+    },
+    {
+      value: "1.200",
+      label: "Cidades Atendidas",
+      sub: "Em todo o Brasil",
+      icon: <MapPin className="w-6 h-6 text-amber-400" />,
+      delay: "300"
+    },
+    {
+      value: "98%",
+      label: "Satisfação",
+      sub: "Avaliação 5 Estrelas",
+      icon: <Award className="w-6 h-6 text-pink-400" />,
+      delay: "400"
+    }
+  ];
 
-      {/* 2. Sheet Overlap - Internal Shadow for Depth */}
-      <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black/40 to-transparent pointer-events-none z-10"></div>
+  return (
+    <section className="py-24 bg-brand-950 text-white relative overflow-hidden">
+      {/* 1. Tech Divider & Glows */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-500/50 to-transparent"></div>
       
+      {/* Background Texture (Dot Grid) */}
+      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-soft-light pointer-events-none"></div>
+      <div className="absolute right-0 bottom-0 w-1/2 h-full opacity-10 pointer-events-none" 
+           style={{ backgroundImage: 'radial-gradient(circle, #3b82f6 1px, transparent 1px)', backgroundSize: '30px 30px' }}>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl font-medium mb-6">Contabilidade séria com tecnologia de ponta</h2>
+        
+        {/* Imagem Humanizada (Bastidores) */}
+        <div className="relative rounded-[2.5rem] overflow-hidden h-64 lg:h-96 mb-20 reveal shadow-2xl border border-white/10 group ring-1 ring-white/5">
+            <img 
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1600&auto=format&fit=crop" 
+              className="w-full h-full object-cover opacity-50 group-hover:opacity-60 group-hover:scale-105 transition-all duration-1000" 
+              alt="Contador analisando dados financeiros" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand-950 via-brand-950/50 to-transparent"></div>
+            
+            <div className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center">
+                <div className="w-16 h-1 bg-brand-500 rounded-full mb-6"></div>
+                <p className="text-white font-medium text-2xl md:text-4xl italic max-w-4xl leading-relaxed drop-shadow-lg">
+                    "Nossa missão não é apenas calcular impostos, é ver o seu negócio prosperar com segurança."
+                </p>
+            </div>
+        </div>
+
+        <div className="grid lg:grid-cols-5 gap-12 items-start">
+          
+          {/* Texto Institucional (2 colunas) */}
+          <div className="lg:col-span-2 reveal">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-700 bg-brand-900/50 backdrop-blur-sm mb-6">
+               <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+               </span>
+               <span className="text-xs font-medium text-brand-200 uppercase tracking-wide">Transparência Total</span>
+            </div>
+
+            <h2 className="text-3xl md:text-4xl font-medium mb-6 leading-tight">
+              Contabilidade séria com <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-200 to-white">tecnologia de ponta</span>
+            </h2>
+            
             <p className="text-slate-400 leading-relaxed mb-8 text-lg">
-              A MeiBiz nasceu para democratizar o acesso a serviços contábeis de alta qualidade. Unimos a experiência de contadores seniores com a eficiência da tecnologia para entregar mais valor por um preço justo.
+              A MeiBiz nasceu para democratizar o acesso a serviços contábeis de alta qualidade. Unimos a experiência de contadores seniores com a eficiência da automação para entregar mais valor por um preço justo.
             </p>
-            <div className="w-20 h-1 bg-brand-500 rounded-full"></div>
+
+            <ul className="space-y-4 text-slate-300">
+               <li className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-900 flex items-center justify-center border border-brand-700">
+                    <ShieldCheck size={14} className="text-brand-400" />
+                  </div>
+                  <span>Segurança de dados bancária</span>
+               </li>
+               <li className="flex items-center gap-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-900 flex items-center justify-center border border-brand-700">
+                    <TrendingUp size={14} className="text-brand-400" />
+                  </div>
+                  <span>Auditoria fiscal contínua</span>
+               </li>
+            </ul>
           </div>
           
-          <div className="grid grid-cols-2 gap-8">
-             <div className="bg-brand-900/50 p-6 rounded-2xl border border-brand-800 backdrop-blur-sm">
-                <p className="text-4xl font-medium text-white mb-2">100+</p>
-                <p className="text-brand-300 text-sm uppercase tracking-wider font-medium">Especialistas</p>
-             </div>
-             <div className="bg-brand-900/50 p-6 rounded-2xl border border-brand-800 backdrop-blur-sm">
-                <p className="text-4xl font-medium text-white mb-2">50k+</p>
-                <p className="text-brand-300 text-sm uppercase tracking-wider font-medium">Clientes</p>
-             </div>
-             <div className="bg-brand-900/50 p-6 rounded-2xl border border-brand-800 backdrop-blur-sm">
-                <p className="text-4xl font-medium text-white mb-2">1.200</p>
-                <p className="text-brand-300 text-sm uppercase tracking-wider font-medium">Cidades</p>
-             </div>
-             <div className="bg-brand-900/50 p-6 rounded-2xl border border-brand-800 backdrop-blur-sm">
-                <p className="text-4xl font-medium text-white mb-2">98%</p>
-                <p className="text-brand-300 text-sm uppercase tracking-wider font-medium">Satisfação</p>
-             </div>
+          {/* Grid de Estatísticas (3 colunas) */}
+          <div className="lg:col-span-3 grid sm:grid-cols-2 gap-4 reveal delay-200">
+             {stats.map((stat, idx) => (
+               <div 
+                 key={idx}
+                 className="group relative bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl hover:bg-white/10 hover:border-brand-500/30 transition-all duration-300 hover:-translate-y-1"
+               >
+                  {/* Hover Glow Effect */}
+                  <div className="absolute -inset-px bg-gradient-to-r from-brand-500 to-accent-500 rounded-2xl opacity-0 group-hover:opacity-20 blur transition-opacity duration-500"></div>
+                  
+                  <div className="relative flex items-start justify-between mb-4">
+                     <div className="p-2 bg-white/5 rounded-lg border border-white/5 group-hover:border-white/20 transition-colors">
+                        {stat.icon}
+                     </div>
+                     <TrendingUp className="w-4 h-4 text-slate-600 group-hover:text-emerald-400 transition-colors opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 duration-300" />
+                  </div>
+                  
+                  <div className="relative">
+                    <p className="text-4xl lg:text-5xl font-medium text-white mb-2 tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-brand-200 transition-all">
+                        {stat.value}
+                    </p>
+                    <p className="text-brand-100 font-medium text-sm uppercase tracking-wider mb-1">
+                        {stat.label}
+                    </p>
+                    <p className="text-slate-500 text-xs">
+                        {stat.sub}
+                    </p>
+                  </div>
+               </div>
+             ))}
           </div>
+
         </div>
       </div>
     </section>

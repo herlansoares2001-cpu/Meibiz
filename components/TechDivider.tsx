@@ -2,7 +2,7 @@ import React from 'react';
 
 export const TechDivider: React.FC = () => {
   return (
-    <div className="relative h-px w-full bg-slate-800/50 overflow-hidden">
+    <div className="relative h-px w-full bg-slate-800 overflow-hidden">
       {/* Luz pulsante de fundo */}
       <div className="absolute inset-0 bg-brand-500/10 blur-sm"></div>
       
