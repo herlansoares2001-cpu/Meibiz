@@ -27,7 +27,7 @@ export const ComparativeTable: React.FC = () => {
            <span>Arraste para comparar</span>
         </div>
 
-        {/* Table Container with relative positioning for the fade overlay */}
+        {/* Table Container */}
         <div className="relative">
             
             <div className="overflow-x-auto pb-2 scrollbar-hide">
@@ -64,9 +64,7 @@ export const ComparativeTable: React.FC = () => {
               </div>
             </div>
 
-            {/* Visual Fade Hint on the Right (Mobile Only) */}
-            {/* This gradient overlay sits on top of the right edge to suggest more content */}
-            <div className="absolute top-0 right-0 bottom-2 w-16 bg-gradient-to-l from-white to-transparent pointer-events-none lg:hidden rounded-r-2xl"></div>
+            {/* Visual Fade Hint removed to prevent visual bugs */}
         </div>
 
       </div>

@@ -12,7 +12,6 @@ import { SavingsSimulator } from './components/SavingsSimulator';
 import { SuccessStories } from './components/SuccessStories'; // Added
 import { ComparativeTable } from './components/ComparativeTable';
 import { AdditionalSolutions } from './components/AdditionalSolutions';
-import { ServedCities } from './components/ServedCities';
 import { FAQ } from './components/FAQ';
 import { SocialProof } from './components/SocialProof';
 import { Institutional } from './components/Institutional';
@@ -69,7 +68,7 @@ const App: React.FC = () => {
         
         <JourneySelection />
         <AdditionalSolutions />
-        <ServedCities />
+        
         <FAQ />
         
         {/* Humanization Step 4: Real Client Photos */}
